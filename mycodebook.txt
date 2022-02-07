@@ -1,0 +1,4 @@
+1. How many data files are there in total?
+- There are 9 datasets, and there are 10 different codebooks. Which one of the codebooks is the master codebook explaining the other codebooks. 
+
+2. refer to project1.py and call the summary_dataset function for the results. 

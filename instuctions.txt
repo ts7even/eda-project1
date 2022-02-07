@@ -1,0 +1,50 @@
+Instructions: You are required to submit one copy of this assignment as a team in the CANVAS submission area. Make sure you do screenshots of all of your SAS/STATA/Python codes, log, results. Anything that is too big to include in your submission. Please make sure you submit to our CANVAS team page areas.
+NO late submission will be accepted. 
+DATA DOWNLOAD AND CATALOG
+Download the SASS-1999 datasets to your local drive. There are SAS/STATA/ASCII formats. Feel free to download the format that you will use. 
+
+ 
+
+How many data files are there in total? Provide the names for each of the data files and provide an explanation of what each data files are representing. 
+Create a codebook for the following files and upload these to your github or google drive or dropbox. Your codebook should include the observation number and number of variables. In addition, you should provide summary statistics for all numeric variables in your datasets. 
+Public teacher data (obs=?, vars=?)
+Public school data (obs=?, vars=?)
+Public principal data (obs=?, vars=?) 
+Public district data (obs=?, vars=?)
+Provide the key identifier variables in each of above four files. These files should each have at least two identifiers. They are called “control number” in the file. Note that the public district file only has one identifier. You can do a word search if you have created the codebook correctly in step 2. 
+ 
+
+DATA PROCESSING AND ANALYSIS
+Data processing for public teacher file
+
+ 
+
+Next steps involve you processing the public teacher file ONLY.
+
+ 
+
+How many public school teachers are there in your dataset?
+How many of them are male teachers versus female teachers?
+How many of them are white, black, hispanic, asian teachers?
+What is the public school teachers’ age distribution?
+How many teachers are teaching elementary school, middle school, and high school teachers?
+What are their general fields of main assignment (ASSIGN)?
+ 
+
+Next steps involve you processing the public school file ONLY.
+
+ 
+
+How many public schools are there in your dataset?
+How many elementary schools are there in the state of Texas, in the state of CA, in the state of Florida?
+What are the average enrollment size (# of students) for high schools?
+What is the average number of teachers in these public schools?
+What is the average number of students eligible for the free lunch program?
+DATA MERGE/COMBINE
+ 
+
+Next, you will need to merge (1) public teacher data; with (2) public school data. Once you finish merging, answer these questions:
+
+Before the merge, provide the observation number for public teacher and public school data.
+After the merge, provide the number of observations that correctly merged. How many of these observations failed to merge? Explain what may be the cause of failure to merge.
+Provide your log file documenting your merge process in SAS/STATA/Python.
