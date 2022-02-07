@@ -211,24 +211,28 @@ def publicSchools():
     total_300to499 = enrollment_size_highschool_300to499.shape[0]
     enrollment_size_highschool_500ormore = df4[(df4['S0092']== 3) ] # 500 or more
     total_500ormore = enrollment_size_highschool_500ormore.shape[0]
+    describe_students = df4['S0092'].describe()
     print('Question 3: What is the average enrollment size (# of students) for highschools')
     print(f'There are {total_less_300} highschools that have less than 300 students')
     print(f'There are {total_300to499} highschools that have between 300 - 499 students ')
     print(f'There are {total_500ormore} highschools that have 500 or more students')
+    print(describe_students)
     print()
     # Need to use pandas summary statistics to get average
 
     # Question 4: What is the average number of teachers in these public schools? #S0254 = Total Teachers at Schools
-    teacher_size_less25 = df4[(df4['S0092']== 1) ]
+    teacher_size_less25 = df4[(df4['S0254']== 1) ]
     total_less25 = teacher_size_less25.shape[0]
-    teacher_size_25to34 = df4[(df4['S0092']== 2) ]
+    teacher_size_25to34 = df4[(df4['S0254']== 2) ]
     total_25to34 = teacher_size_25to34.shape[0]
-    teacher_size_35ormore = df4[(df4['S0092']== 3) ]
+    teacher_size_35ormore = df4[(df4['S0254']== 3) ]
     total_35ormore = teacher_size_35ormore.shape[0]
+    describe_teachers = df4['S0254'].describe()
     print('Question 4: What is the average number of teachers in these public schools? #S0254 = Total Teachers at Schools')
     print(f'There are {total_less25} schools with less than 25 teachers')
     print(f'There are {total_25to34} schools between 25 - 34 teachers ')
     print(f'There are {total_35ormore} schools with more than 35 teachers')
+    print(describe_teachers)
     print()
 
     # Question 5: What is the average number of students eligible for the free lunch program? #S0282 = eligible lunch
@@ -238,10 +242,13 @@ def publicSchools():
     total_nope_lunch = nope_lunch.shape[0]
     dont_know_lunch = df4[(df4['S0282']== 3)]
     total_dont_know = dont_know_lunch.shape[0]
+    describe_lunch = df4['S0282'].describe()
     print('Question 5: What is the average number of students eligible for the free lunch program?')
     print(f'There are {total_yes_lunch} of students who are eligible for free lunch ')
     print(f'There are {total_nope_lunch} of students who are not eligible for free lunch ')
     print(f'There are {total_dont_know} students that dont know if they are eligible ')
+    print(describe_lunch)
+    print()
 
 
 
