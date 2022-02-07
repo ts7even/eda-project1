@@ -171,7 +171,7 @@ def publicTeacher():
     print('Question 6: What are the general fields of main assignment(ASSIGN)?')
     print(f'There are {total_prek} teachers that teach Prekindergarten, Kindergarten, and General Elementary')
     print(f'There are {total_math_science} teachers that teach Math and Science')
-    print(f'There are {total_english_language} teahers that teach English/language arts ')
+    print(f'There are {total_english_language} teachers that teach English/language arts ')
     print(f'There are {total_social_science} teachers that teach Social Sciences')
     print(f'There are {total_special_education} teachers that teach Special Education')
     print(f'There are {total_forieign_language} teachers that teach Foreign Languages')
@@ -184,7 +184,7 @@ def publicTeacher():
 
 
 
-# PRocessing the Public School file - Need help for this one...
+# Processing the Public School file - Need help for this one...
 def publicSchools():
     # Question 1: How many public schools are there in you dataset?
     total_public_schools = df4.shape[0]
