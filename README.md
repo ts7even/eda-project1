@@ -16,7 +16,6 @@ Let me know if you need my folder structure if you are having trouble setting it
 - git add . 
 - git status 
 - git commit -m "Commit Name"
-- git remote add origin https://github.com/ts7even/eda-project1
-- git push -u master
+- git remote add origin https://github.com/ts7even/eda-project1 (Skip for second + pushes)
+- git push -u master (just use git push on second + commits)
 
-# 

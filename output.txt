@@ -19,6 +19,15 @@ There are 42086 public teachers
 
 Question 2: How many of them are make teachers versus female teachers?
 There are 13826 male teachers and 28260 female teachers
+count    42086.000000
+mean         1.671482
+std          0.469680
+min          1.000000
+25%          1.000000
+50%          2.000000
+75%          2.000000
+max          2.000000
+Name: T0356, dtype: float64
 
 Question 3: How many of them are white, black, hispanic teachers?
 There are 35555 white teachers
@@ -26,36 +35,72 @@ There are 2569 black teachers
 There are 1826 hispanic teachers
 There are 1095 asian teachers
 There are 1041 american indian teachers
+count    42086.000000
+mean         3.856104
+std          0.640641
+min          1.000000
+25%          4.000000
+50%          4.000000
+75%          4.000000
+max          5.000000
+Name: RACETH_T, dtype: float64
 
 Question 4: What is the public teachers age distribution?
 There are 6635 teachers that are 30 years or younger old
 There are 9303 teachers that are between 30 to 39 years old
 There are 13725 teachers that are 40 to 49 years old
 There are 12423 teachers that are 50+ years old
+count    42086.000000
+mean         2.758827
+std          1.043410
+min          1.000000
+25%          2.000000
+50%          3.000000
+75%          4.000000
+max          4.000000
+Name: AGE_T, dtype: float64
 
 Quesiton 5: How many teachers are teaching elementary school, middle school, and high school?
 There are 11124 elementary school teachers
 There are 9071 middle school teachers
 There are 21493 high school teachers
 There are 398 "other" school teachers
+count    42086.00000
+mean         2.26529
+std          0.86167
+min          1.00000
+25%          1.00000
+50%          3.00000
+75%          3.00000
+max          4.00000
+Name: TEALEV, dtype: float64
 
 Question 6: What are the general fields of main assignment(ASSIGN)?
 There are 9055 teachers that teach Prekindergarten, Kindergarten, and General Elementary
 There are 7139 teachers that teach Math and Science
-There are 4863 teahers that teach English/language arts 
+There are 4863 teachers that teach English/language arts 
 There are 3234 teachers that teach Social Sciences
 There are 4753 teachers that teach Special Education
 There are 1486 teachers that teach Foreign Languages
 There are 581 teachers that teach Bilingual/ESL education
 There are 3159 teachers that teach Vocational/technical education
 There are 7816 teachers that teach "All Other" 
+count    42086.000000
+mean         4.353514
+std          2.971187
+min          1.000000
+25%          2.000000
+50%          3.000000
+75%          8.000000
+max          9.000000
+Name: ASSIGN, dtype: float64
 
 Processing the Public School file - DATA Processing and Analyis
 
 Question 1: How many schools are there in your data set? 
 There are 8432 schools in the dataset
 
-Question 2: How many public schools aare there in the state of Texas, California and Florida
+Question 2: How many public schools aare there in the state of Texas, California and Florida? - Need HELP
 Found only data by region, so the southern region has 1404 elementary schools
 For the Western reigion (California) there are 1080 elementary schools
 

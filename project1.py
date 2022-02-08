@@ -93,8 +93,10 @@ def publicTeacher():
     total_male = male_teachers.shape[0]
     female_teacher = df6[(df6["T0356"]==2)]
     total_female = female_teacher.shape[0]
+    describe_sex = df6['T0356'].describe()
     print('Question 2: How many of them are make teachers versus female teachers?')
     print(f'There are {total_male} male teachers and {total_female} female teachers')
+    print(describe_sex)
     print()
 
     # Question 3: How many of them are white, black, hispanic teachers? 
@@ -108,12 +110,14 @@ def publicTeacher():
     total_asian_teachers = asian_teachers.shape[0]
     american_indian_teachers = df6[(df6["RACETH_T"]==1)]
     total_american_indian_teachers = american_indian_teachers.shape[0]
+    describe_ethnicity = df6['RACETH_T'].describe()
     print('Question 3: How many of them are white, black, hispanic teachers?')
     print(f'There are {total_white_teachers} white teachers')
     print(f'There are {total_black_teachers} black teachers')
     print(f'There are {total_hispanic_teachers} hispanic teachers')
     print(f'There are {total_asian_teachers} asian teachers')
     print(f'There are {total_american_indian_teachers} american indian teachers')
+    print(describe_ethnicity)
     print()
 
     # Question 4: What is the public teachers age distribution? 
@@ -125,11 +129,13 @@ def publicTeacher():
     total_age_3 = data_age_3.shape[0]
     data_age_4 = df6[ (df6['AGE_T']== 4)]
     total_age_4 = data_age_4.shape[0]
+    describe_age = df6['AGE_T'].describe()
     print('Question 4: What is the public teachers age distribution?')
     print(f'There are {total_age_1} teachers that are 30 years or younger old')
     print(f'There are {total_age_2} teachers that are between 30 to 39 years old')
     print(f'There are {total_age_3} teachers that are 40 to 49 years old')
     print(f'There are {total_age_4} teachers that are 50+ years old')
+    print(describe_age)
     print()
 
     # Quesiton 5: How many teachers are teaching elementary school, middle school, and high school?
@@ -141,11 +147,13 @@ def publicTeacher():
     total_high = high_school.shape[0]
     other_school = df6[ (df6['TEALEV']== 4)]
     total_other = other_school.shape[0]
+    describe_school = df6['TEALEV'].describe()
     print('Quesiton 5: How many teachers are teaching elementary school, middle school, and high school?')
     print(f'There are {total_elementary} elementary school teachers')
     print(f'There are {total_middle} middle school teachers')
     print(f'There are {total_high} high school teachers')
     print(f'There are {total_other} "other" school teachers')
+    print(describe_school)
     print()
 
 
@@ -168,6 +176,7 @@ def publicTeacher():
     total_vocational_technical = vocational_technical.shape[0]
     all_others = df6[ (df6['ASSIGN']== 9)]
     total_all_others = all_others.shape[0]
+    describe_assign = df6['ASSIGN'].describe()
     print('Question 6: What are the general fields of main assignment(ASSIGN)?')
     print(f'There are {total_prek} teachers that teach Prekindergarten, Kindergarten, and General Elementary')
     print(f'There are {total_math_science} teachers that teach Math and Science')
@@ -178,6 +187,7 @@ def publicTeacher():
     print(f'There are {total_bilingual_ESL} teachers that teach Bilingual/ESL education')
     print(f'There are {total_vocational_technical} teachers that teach Vocational/technical education')
     print(f'There are {total_all_others} teachers that teach "All Other" ')
+    print(describe_assign)
     print()
 
 
@@ -199,7 +209,7 @@ def publicSchools():
     total_south_elementary_schools = texas_elementary_schools.shape[0]
     ca_elementary_schools = df4[(df4['SCHLEVEL']==1) & (df4['REGION']== 4) ]
     total_west_elementary_schools = ca_elementary_schools.shape[0]
-    print('Question 2: How many public schools aare there in the state of Texas, California and Florida')
+    print('Question 2: How many public schools aare there in the state of Texas, California and Florida? - Need HELP')
     print(f'Found only data by region, so the southern region has {total_south_elementary_schools} elementary schools')
     print(f'For the Western reigion (California) there are {total_west_elementary_schools} elementary schools')
     print()
