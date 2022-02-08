@@ -145,3 +145,11 @@ min         1.000000
 75%         1.000000
 max         3.000000
 Name: S0282, dtype: float64
+
+
+
+Output from project-data-merge
+
+- Only 2138 varibles merged. 
+
+The reason being is that it is not a 1 to 1 relationship 
