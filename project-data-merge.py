@@ -1,30 +1,50 @@
 import pandas as pd
 import numpy as np
-import sys
 
-# To remove traceback and to only get an error. Needed to import sys
-sys.tracebacklimit = 0
 
-public_school = 'source/dataset/SASS_99_00_S3a_v1_0.csv'
-public_teacher = 'source/dataset/SASS_99_00_S4a_v1_0.csv'
 
 df1 = pd.read_csv('source/dataset/SASS_99_00_S3a_v1_0.csv')
 df2 = pd.read_csv('source/dataset/SASS_99_00_S4a_v1_0.csv')
 
-data_merge = df2.merge(df1, how='inner') # Inner means intersection - Outer means Union
-# data_1_to_many = df2.merge(df1,  validate='1:m')
-# data_many_to_many = df2.merge(df1, validate='m:1')
-
-data_merge_shape = data_merge.shape[1]
-
-print(f'Only {data_merge_shape} varibles merged.')
 
 
-# print(data_1_to_many)
-# print(data_many_to_many)
+# test mockup of merge 
 
-# It will return:  pandas.errors.MergeError: Merge keys are not unique in left dataset; not a one-to-one merge
-# But we need to find and print how many of them correctly merged and how many failed to merge. 
 
+data_merge1 = pd.merge(df1, df2, how='inner') # Inner means intersection - Outer means Union. This is trying to merge on columns. 
+data_merge2 = pd.merge(df1, df2,  how='inner')
+data_merge3 = pd.merge(df1, df2, how='inner', validate='m:m')
+
+# data_merge1 = True if data_merge_shape1 is >= 1:
+
+data_merge_shape1 = data_merge1.shape[0]
+
+data_merge_shape2 = data_merge2.shape[0]
+
+data_merge_shape3 = data_merge3.shape[0]
+
+
+shape1 = df1.shape[1]
+shape2 = df2.shape[1]
+total_shape_varibles = np.sum(shape1 + shape2)
+
+
+
+
+def dataMerge():
+    print(f'df1 has {shape1} columns and df2 has {shape2} columns. Total from both datasets are: {total_shape_varibles}  '   )
+    if data_merge1 is True: # Tryed to do >=1 instead of a boolean
+        return print(f'The data tried to merge a relationship. Number of observations that merged {data_merge_shape1}')
+
+    elif data_merge2 is True: # Tryed to do >=1 instead of a boolean
+        return print(f'The data tried to merge a relationship. Number of observations that merged {data_merge_shape2} ')
+
+    elif data_merge3 is True: # Tryed to do >=1 instead of a boolean
+        return print(f'The data tried to merge a relationship. Number of observations that merged {data_merge_shape3} ')
+
+    else:
+        return print('Non of the merged solutions worked since there is no intersection of varibles. ')
+
+dataMerge()
 
 

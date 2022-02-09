@@ -148,8 +148,11 @@ Name: S0282, dtype: float64
 
 
 
-Output from project-data-merge
+# Output from project-data-merge
 
-- Only 2138 varibles merged. 
+# When Trying validata for 1 to 1, 1 to many, many to one 
 
-The reason being is that it is not a 1 to 1 relationship 
+- pandas.errors.MergeError: Merge keys are not unique in left dataset; not a one-to-one merge
+
+
+

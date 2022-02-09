@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np 
 
 
-# All you need to do is to provide the correct path for the 
+
 # Datasets 
 school_district_data = 'source/dataset/SASS_99_00_S1a_v1_0.csv'
 public_school_principle = 'source/dataset/SASS_99_00_S2a_v1_0.csv'
@@ -11,9 +11,8 @@ public_school = 'source/dataset/SASS_99_00_S3a_v1_0.csv'
 private_school = 'source/dataset/SASS_99_00_S3b_v1_0.csv'
 public_teacher_data = 'source/dataset/SASS_99_00_S4a_v1_0.csv'
 private_teacher_data = 'source/dataset/SASS_99_00_S4b_v1_0.csv'
-
-idk_what_this_is1 = 'source/dataset/SASS_99_00_T2_v1_0.csv'
-idk_what_this_is2 = 'source/dataset/SASS_99_00_T3_v1_0.csv'
+former_teacher = 'source/dataset/SASS_99_00_T2_v1_0.csv'
+current_teacher = 'source/dataset/SASS_99_00_T3_v1_0.csv'
 
 # Setting up dataframe
 df1 = pd.read_csv(school_district_data, low_memory=False)
@@ -23,11 +22,11 @@ df4 = pd.read_csv(public_school, low_memory=False)
 df5 = pd.read_csv(private_school, low_memory=False)
 df6 = pd.read_csv(public_teacher_data, low_memory=False)
 df7 = pd.read_csv(private_teacher_data, low_memory=False)
-df8 = pd.read_csv(idk_what_this_is1, low_memory=False)
-df9 = pd.read_csv(idk_what_this_is2, low_memory=False)
+df8 = pd.read_csv(former_teacher, low_memory=False)
+df9 = pd.read_csv(current_teacher, low_memory=False)
 
 
-# print("There are nine datafiles in total.")
+print("There are nine datafiles in total.")
 
 # Summary Statistics for all files in the dataset
 # .shape[0] = Observations
@@ -62,30 +61,30 @@ def summary_dataset():
     s4b_varible = df7.shape[1]
     print(f'Private Teacher data has {s4b_obervation} observations, and {s4b_varible} varibles.')
 
-    t1_observation = df8.shape[0]
-    t1_varible = df8.shape[1]
-    print(f'T1 has {t1_observation} observations, and {t1_varible} varibles.')
+    t2_observation = df8.shape[0]
+    t2_varible = df8.shape[1]
+    print(f'Former Teacher data has {t2_observation} observations, and {t2_varible} varibles.')
 
-    t2_observation = df9.shape[0]
-    t2_varible = df9.shape[1]
-    print(f'T2 has {t2_observation} observations, and {t2_varible} varibles.')
+    t3_observation = df9.shape[0]
+    t3_varible = df9.shape[1]
+    print(f'Current Teacher data has {t3_observation} observations, and {t3_varible} varibles.')
     print()
 
-    # Control Numbers and I dont think these are right. 
+    # Control Numbers  
     print('The control number for Public Teacher Data is (CNTLNUM) and (SCHCNTL)')
     print('The control number for Public School Data is (SCHCNTL) ')
     print('The control number for Public Principle Data is (CNTLNUM) and (SCHCNTL)')
-    print('The control number for Public Distric Data is (CNTLNUM)')
+    print('The control number for Public District Data is (CNTLNUM)')
     print()
 
 
-# only working with the public teacher file df6
+# Only working with the public teacher file df6
 def publicTeacher():
     # Question 1: How many public school teachers in your dataset?
     s4a_observation = df6.shape[0]
     print('Working with the Public School Teacher File - Data Processing and Analysis')
     print('Question 1: How many public school teachers in your dataset?')
-    print(f'There are {s4a_observation} public teachers ')
+    print(f'There are {s4a_observation} public teachers')
     print()
 
     # Question 2: How many of them are make teachers versus female teachers?
@@ -94,7 +93,7 @@ def publicTeacher():
     female_teacher = df6[(df6["T0356"]==2)]
     total_female = female_teacher.shape[0]
     describe_sex = df6['T0356'].describe()
-    print('Question 2: How many of them are make teachers versus female teachers?')
+    print('Question 2: How many of them are male teachers versus female teachers?')
     print(f'There are {total_male} male teachers and {total_female} female teachers')
     print(describe_sex)
     print()
@@ -204,15 +203,19 @@ def publicSchools():
     print(f'There are {total_public_schools} schools in the dataset')
     print()
 
-    # Question 2: How many public schools aare there in the state of Texas, California and Florida 
+    # Question 2: How many elementary schools are there in the state of Texas, in the state of CA, in the state of Florida?
+    # 1 = Northeast | 2 = Midwest | 3 = South | 4 = West
     texas_elementary_schools = df4[(df4['SCHLEVEL']==1) & (df4['REGION']== 3) ]
     total_south_elementary_schools = texas_elementary_schools.shape[0]
     ca_elementary_schools = df4[(df4['SCHLEVEL']==1) & (df4['REGION']== 4) ]
     total_west_elementary_schools = ca_elementary_schools.shape[0]
-    print('Question 2: How many public schools aare there in the state of Texas, California and Florida? - Need HELP')
-    print(f'Found only data by region, so the southern region has {total_south_elementary_schools} elementary schools')
-    print(f'For the Western reigion (California) there are {total_west_elementary_schools} elementary schools')
+    describe_elementary_schools = df4[['SCHLEVEL', 'REGION']].describe() # There is another way to describe only elementary schools and by region. 
+    print('Question 2: How many elementary schools are there in the state of Texas, in the state of CA, in the state of Florida? - Need HELP')
+    print(f'Found only data by region in the public school file, so the southern region has {total_south_elementary_schools} elementary schools')
+    print(f'For the Western reigion there are {total_west_elementary_schools} elementary schools')
+    print(describe_elementary_schools)
     print()
+
 
     # Question 3: What is the average enrollment size (# of students) for highschools
     enrollment_size_highschool_less300 = df4[(df4['S0092']== 1) ] # Less that 300
@@ -228,7 +231,7 @@ def publicSchools():
     print(f'There are {total_500ormore} highschools that have 500 or more students')
     print(describe_students)
     print()
-    # Need to use pandas summary statistics to get average
+  
 
     # Question 4: What is the average number of teachers in these public schools? #S0254 = Total Teachers at Schools
     teacher_size_less25 = df4[(df4['S0254']== 1) ]
