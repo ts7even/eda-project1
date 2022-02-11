@@ -20,11 +20,9 @@ df2 = pd.read_csv('source/dataset/SASS_99_00_S4a_v1_0.csv') # Public School Teac
 def dataMerge():
     merge_test_1 = pd.merge(df1, df2, on="SCHCNTL")
     merge_shape_1 = merge_test_1.shape[0]
-    merge_describe = merge_test_1["SCHCNTL"].describe()
     print(merge_test_1)
     print()
     print(f'The amount of observations that merged {merge_shape_1}')
-    print(merge_describe)
 dataMerge()
 
 

@@ -48,3 +48,19 @@ Next, you will need to merge (1) public teacher data; with (2) public school dat
 Before the merge, provide the observation number for public teacher and public school data.
 After the merge, provide the number of observations that correctly merged. How many of these observations failed to merge? Explain what may be the cause of failure to merge.
 Provide your log file documenting your merge process in SAS/STATA/Python.
+
+
+
+# Merge SAS Syntax from 
+proc sort data = dataset1;
+by SCHCNTL;
+run;
+proc sort data = dataset2;
+by SCHCNTL;
+run;
+data newfilename; /*creates new merged file name*/
+merge dataset1 (in=a) dataset2; /* merges the two files and specifies dataset1 as unit
+of analysis*/
+by SCHCNTL;
+if a = 1; /*keeps all dataset1 records and only matching dataset2 records*/
+run;

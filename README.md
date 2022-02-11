@@ -19,3 +19,5 @@ Let me know if you need my folder structure if you are having trouble setting it
 - git remote add origin https://github.com/ts7even/eda-project1 (Skip for second + pushes)
 - git push -u master (just use git push on second + commits)
 
+# Git Pull 
+- git pull (If not repo not synced then - git pull --rebase origin master then git push origin master)
