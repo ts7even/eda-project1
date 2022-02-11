@@ -3,8 +3,6 @@ import numpy as np
 
 
 
-# Do not run this file, it might break the csv dataset. This was for practice  
-
 
 
 # The assignment Merge 
