@@ -193,7 +193,7 @@ def publicTeacher():
 
 
 
-# Processing the Public School file - Need help for this one...
+# Processing the Public School file...
 def publicSchools():
     # Question 1: How many public schools are there in you dataset?
     total_public_schools = df4.shape[0]
@@ -211,20 +211,20 @@ def publicSchools():
     total_west_elementary_schools = ca_elementary_schools.shape[0]
     describe_elementary_schools = df4[['SCHLEVEL', 'REGION']].describe() # There is another way to describe only elementary schools and by region. 
     print('Question 2: How many elementary schools are there in the state of Texas, in the state of CA, in the state of Florida? - Need HELP')
-    print(f'Found only data by region in the public school file, so the southern region has {total_south_elementary_schools} elementary schools')
-    print(f'For the Western reigion there are {total_west_elementary_schools} elementary schools')
+    print(f'Found only data by region in the public school file, so the southern region (Texas & Florida) has {total_south_elementary_schools} elementary schools')
+    print(f'For the Western reigion (California) there are {total_west_elementary_schools} elementary schools')
     print(describe_elementary_schools)
     print()
 
 
     # Question 3: What is the average enrollment size (# of students) for highschools
-    enrollment_size_highschool_less300 = df4[(df4['S0092']== 1) ] # Less that 300
+    enrollment_size_highschool_less300 = df4[(df4['S0092']== 1) & (df4['SCHLEVEL']==2)  ] # Less that 300
     total_less_300 = enrollment_size_highschool_less300.shape[0]
-    enrollment_size_highschool_300to499 = df4[(df4['S0092']== 2) ] # Between 300 - 499
+    enrollment_size_highschool_300to499 = df4[(df4['S0092']== 2) & (df4['SCHLEVEL']==2) ] # Between 300 - 499
     total_300to499 = enrollment_size_highschool_300to499.shape[0]
-    enrollment_size_highschool_500ormore = df4[(df4['S0092']== 3) ] # 500 or more
+    enrollment_size_highschool_500ormore = df4[(df4['S0092']== 3) & (df4['SCHLEVEL']==2) ] # 500 or more
     total_500ormore = enrollment_size_highschool_500ormore.shape[0]
-    describe_students = df4['S0092'].describe()
+    describe_students = df4[['S0092', 'SCHLEVEL']].describe()
     print('Question 3: What is the average enrollment size (# of students) for highschools')
     print(f'There are {total_less_300} highschools that have less than 300 students')
     print(f'There are {total_300to499} highschools that have between 300 - 499 students ')
@@ -248,20 +248,25 @@ def publicSchools():
     print(describe_teachers)
     print()
 
-    # Question 5: What is the average number of students eligible for the free lunch program? #S0282 = eligible lunch
-    yes_lunch = df4[(df4['S0282']== 1)]
-    total_yes_lunch = yes_lunch.shape[0]
-    nope_lunch = df4[(df4['S0282']== 2)]
-    total_nope_lunch = nope_lunch.shape[0]
-    dont_know_lunch = df4[(df4['S0282']== 3)]
-    total_dont_know = dont_know_lunch.shape[0]
-    describe_lunch = df4['S0282'].describe()
+    # Question 5: What is the average number of students eligible for the free lunch program? #S0284 = eligible lunch
+    less_than_five_percent = df4[(df4['S0284']== 1)]
+    total_less_than_five_percent = less_than_five_percent.shape[0]
+    between_five_and_19_percent = df4[(df4['S0284']== 2)]
+    total_between_five_and_19_percent = between_five_and_19_percent.shape[0]
+    between_20_and_49_percent = df4[(df4['S0284']== 3)]
+    total_between_20_and_49_percent = between_20_and_49_percent.shape[0]
+    fifty_percent_or_more = df4[(df4['S0284']== 4)]
+    total_fifty_percent_or_more = fifty_percent_or_more.shape[0]
+
+    describe_lunch = df4['S0284'].describe()
     print('Question 5: What is the average number of students eligible for the free lunch program?')
-    print(f'There are {total_yes_lunch} of students who are eligible for free lunch ')
-    print(f'There are {total_nope_lunch} of students who are not eligible for free lunch ')
-    print(f'There are {total_dont_know} students that dont know if they are eligible ')
+    print(f'The amount of students that are eligible for free lunch. (Less than 5%): {total_less_than_five_percent}')
+    print(f'The amount of students that are eligible for free lunch. (Between 5% and 19%): {total_between_five_and_19_percent} ')
+    print(f'The amount of students that are eligible for free lunch. (Between 20% and 49%): {total_between_20_and_49_percent} ')
+    print(f'The amount of students that are eligible for free lunch. (50% or more): {total_fifty_percent_or_more}')
     print(describe_lunch)
     print()
+publicSchools()
 
 
 
