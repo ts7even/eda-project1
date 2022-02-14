@@ -210,8 +210,8 @@ def publicSchools():
     ca_elementary_schools = df4[(df4['SCHLEVEL']==1) & (df4['REGION']== 4) ]
     total_west_elementary_schools = ca_elementary_schools.shape[0]
     describe_elementary_schools = df4[['SCHLEVEL', 'REGION']].describe() # There is another way to describe only elementary schools and by region. 
-    print('Question 2: How many elementary schools are there in the state of Texas, in the state of CA, in the state of Florida? - Need HELP')
-    print(f'Found only data by region in the public school file, so the southern region (Texas & Florida) has {total_south_elementary_schools} elementary schools')
+    print('Question 2: How many elementary schools are there in the state of Texas, in the state of CA, in the state of Florida?')
+    print(f'Found data by region in the public school file, so the southern region (Texas & Florida) has {total_south_elementary_schools} elementary schools')
     print(f'For the Western reigion (California) there are {total_west_elementary_schools} elementary schools')
     print(describe_elementary_schools)
     print()
@@ -248,7 +248,7 @@ def publicSchools():
     print(describe_teachers)
     print()
 
-    # Question 5: What is the average number of students eligible for the free lunch program? #S0284 = eligible lunch
+    # Question 5: What is the average number of students eligible for the free lunch program? #S0284 = Eligible lunch
     less_than_five_percent = df4[(df4['S0284']== 1)]
     total_less_than_five_percent = less_than_five_percent.shape[0]
     between_five_and_19_percent = df4[(df4['S0284']== 2)]
@@ -257,19 +257,18 @@ def publicSchools():
     total_between_20_and_49_percent = between_20_and_49_percent.shape[0]
     fifty_percent_or_more = df4[(df4['S0284']== 4)]
     total_fifty_percent_or_more = fifty_percent_or_more.shape[0]
+    valid_skip = df4[(df4['S0284']== -8)]
+    total_valid_skip = valid_skip.shape[0]
 
     describe_lunch = df4['S0284'].describe()
     print('Question 5: What is the average number of students eligible for the free lunch program?')
-    print(f'The amount of students that are eligible for free lunch. (Less than 5%): {total_less_than_five_percent}')
-    print(f'The amount of students that are eligible for free lunch. (Between 5% and 19%): {total_between_five_and_19_percent} ')
-    print(f'The amount of students that are eligible for free lunch. (Between 20% and 49%): {total_between_20_and_49_percent} ')
-    print(f'The amount of students that are eligible for free lunch. (50% or more): {total_fifty_percent_or_more}')
+    print(f'Schools that reported how many students are eligible for free lunch. (Less than 5%): {total_less_than_five_percent}')
+    print(f'Schools that reported how many students are eligible for free lunch. (Between 5% and 19%): {total_between_five_and_19_percent} ')
+    print(f'Schools that reported how many students are eligible for free lunch. (Between 20% and 49%): {total_between_20_and_49_percent} ')
+    print(f'Schools that reported how many students are eligible for free lunch. (50% or more): {total_fifty_percent_or_more}')
+    print(f'Schools that chose the Valid Skip option: {total_valid_skip}')
     print(describe_lunch)
     print()
-publicSchools()
-
-
-
 
 
 summary_dataset()
