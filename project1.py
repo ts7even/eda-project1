@@ -270,7 +270,6 @@ def publicSchools():
     print(describe_lunch)
     print()
 
-
 summary_dataset()
 publicTeacher()
 publicSchools()
