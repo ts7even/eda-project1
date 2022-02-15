@@ -1,16 +1,16 @@
-TThere are nine datafiles in total.
+There are nine datafiles in total.
 
 School District Data has 4690 observations, and 309 varibles.
-Public School Principle Data has 8524 observations, and 473 varibles.  
-Private School Principle Data has 2734 observations, and 384 varibles. 
+Public School Principle Data has 8524 observations, and 473 varibles. 
+Private School Principle Data has 2734 observations, and 384 varibles.
 Public School data has 8432 observations, and 814 varibles.
 Private School data has 2611 observations, and 787 varibles.
-Public Teacher data has 42086 observations, and 1335 varibles.
-Private Teacher data has 7098 observations, and 1338 varibles.
+Public Teacher data has 42086 observations, and 1335 varibles.        
+Private Teacher data has 7098 observations, and 1338 varibles.        
 Former Teacher data has 2149 observations, and 404 varibles.
 Current Teacher data has 3639 observations, and 618 varibles.
 
-The control number for Public Teacher Data is (CNTLNUM) and (SCHCNTL)  
+The control number for Public Teacher Data is (CNTLNUM) and (SCHCNTL) 
 The control number for Public School Data is (SCHCNTL)
 The control number for Public Principle Data is (CNTLNUM) and (SCHCNTL)
 The control number for Public District Data is (CNTLNUM)
@@ -102,32 +102,30 @@ Processing the Public School file - DATA Processing and Analyis
 Question 1: How many schools are there in your data set?
 There are 8432 schools in the dataset
 
-Question 2: How many elementary schools are there in the state of Texas, in the state of CA, in the state of Florida?
-Found data by region in the public school file, so the southern region (Texas & Florida) has 1404 elementary schools
+Question 2: How many elementary schools are there in the state of Texas, in the state of CA, in the state of Florida? 
+Found only data by region in the public school file, so the southern region (Texas & Florida) has 1404 elementary schools
 For the Western reigion (California) there are 1080 elementary schools
-          SCHLEVEL       REGION
-count  8432.000000  8432.000000
-mean      1.604009     2.705764
-std       0.649332     1.008033
-min       1.000000     1.000000
-25%       1.000000     2.000000
-50%       2.000000     3.000000
-75%       2.000000     4.000000
-max       3.000000     4.000000
+REGION
+1     683
+2     941
+3    1404
+4    1080
+Name: REGION, dtype: int64
 
 Question 3: What is the average enrollment size (# of students) for highschools
-There are 802 highschools that have less than 300 students
-There are 495 highschools that have between 300 - 499 students
-There are 2258 highschools that have 500 or more students
-             S0092     SCHLEVEL
-count  8432.000000  8432.000000
-mean      2.223435     1.604009
-std       0.849976     0.649332
-min       1.000000     1.000000
-25%       1.000000     1.000000
-50%       2.000000     2.000000
-75%       3.000000     2.000000
-max       3.000000     3.000000
+The total amount of highschools: 3555
+There are 802 highschools that have less than 300 students; 22.56%
+There are 495 highschools that have between 300 - 499 students; Average 13.92%
+There are 2258 highschools that have 500 or more students; Average 63.52%
+             S0092
+count  3555.000000
+mean      2.409564
+std       0.832593
+min       1.000000
+25%       2.000000
+50%       3.000000
+75%       3.000000
+max       3.000000
 
 Question 4: What is the average number of teachers in these public schools? #S0254 = Total Teachers at Schools
 There are 2661 schools with less than 25 teachers
@@ -144,20 +142,20 @@ max         3.000000
 Name: S0254, dtype: float64
 
 Question 5: What is the average number of students eligible for the free lunch program?
-Schools that reported how many students are eligible for free lunch. (Less than 5%): 482
-Schools that reported how many students are eligible for free lunch. (Between 5% and 19%): 1820
-Schools that reported how many students are eligible for free lunch. (Between 20% and 49%): 2988
-Schools that reported how many students are eligible for free lunch. (50% or more): 2886
-Schools that chose the Valid Skip option: 256
-count    8432.000000
-mean        2.678131
-std         2.087416
-min        -8.000000
-25%         2.000000
-50%         3.000000
-75%         4.000000
-max         4.000000
-Name: S0284, dtype: float64
+There is a valid skip option that was intentionally not calculated for the mean. Total Valid Skip: 256
+The amount of students that are eligible for free lunch. (Less than 5%): 482
+The amount of students that are eligible for free lunch. (Between 5% and 19%): 1820
+The amount of students that are eligible for free lunch. (Between 20% and 49%): 2988
+The amount of students that are eligible for free lunch. (50% or more): 2886
+             S0284
+count  8176.000000
+mean      3.012476
+std       0.900746
+min       1.000000
+25%       2.000000
+50%       3.000000
+75%       4.000000
+max       4.000000
 
 
 
