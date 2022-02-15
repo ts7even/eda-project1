@@ -1,18 +1,18 @@
 There are nine datafiles in total.
 
 School District Data has 4690 observations, and 309 varibles.
-Public School Principle Data has 8524 observations, and 473 varibles. 
-Private School Principle Data has 2734 observations, and 384 varibles.
+Public School Principle Data has 8524 observations, and 473 varibles.     
+Private School Principle Data has 2734 observations, and 384 varibles.    
 Public School data has 8432 observations, and 814 varibles.
 Private School data has 2611 observations, and 787 varibles.
-Public Teacher data has 42086 observations, and 1335 varibles.        
-Private Teacher data has 7098 observations, and 1338 varibles.        
+Public Teacher data has 42086 observations, and 1335 varibles.
+Private Teacher data has 7098 observations, and 1338 varibles.
 Former Teacher data has 2149 observations, and 404 varibles.
 Current Teacher data has 3639 observations, and 618 varibles.
 
-The control number for Public Teacher Data is (CNTLNUM) and (SCHCNTL) 
-The control number for Public School Data is (SCHCNTL)
-The control number for Public Principle Data is (CNTLNUM) and (SCHCNTL)
+The control number for Public Teacher Data is (CNTLNUM) and (SCHCNTL)     
+The control number for Public School Data is (SCHCNTL) 
+The control number for Public Principle Data is (CNTLNUM) and (SCHCNTL)   
 The control number for Public District Data is (CNTLNUM)
 
 Working with the Public School Teacher File - Data Processing and Analysis
@@ -142,11 +142,13 @@ max         3.000000
 Name: S0254, dtype: float64
 
 Question 5: What is the average number of students eligible for the free lunch program?
-There is a valid skip option that was intentionally not calculated for the mean. Total Valid Skip: 256
+Provided two different summary stats. One without the valid skip, and one that includes valid skip. 
 The amount of students that are eligible for free lunch. (Less than 5%): 482
 The amount of students that are eligible for free lunch. (Between 5% and 19%): 1820
 The amount of students that are eligible for free lunch. (Between 20% and 49%): 2988
 The amount of students that are eligible for free lunch. (50% or more): 2886
+
+The summary stats without the valid skip
              S0284
 count  8176.000000
 mean      3.012476
@@ -157,7 +159,16 @@ min       1.000000
 75%       4.000000
 max       4.000000
 
-
+The summary stats that includes the valid skip option
+count    8432.000000
+mean        2.678131
+std         2.087416
+min        -8.000000
+25%         2.000000
+50%         3.000000
+75%         4.000000
+max         4.000000
+Name: S0284, dtype: float64
 
 # Out of project-data-merge.py (Merging the two dataframes)
 

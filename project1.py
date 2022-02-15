@@ -251,9 +251,7 @@ def publicSchools():
     print()
 
     # Question 5: What is the average number of students eligible for the free lunch program? #S0284 = eligible lunch
-    eligible_lunch = df4[(df4['S0284']!= -8)]
-    valid_skip = df4[(df4['S0284']== -8)]
-    total_valid_skip = valid_skip.shape[0]
+    valid_skip = df4[(df4['S0284']!= -8)]
     less_than_five_percent = df4[(df4['S0284']== 1)]
     total_less_than_five_percent = less_than_five_percent.shape[0]
     between_five_and_19_percent = df4[(df4['S0284']== 2)]
@@ -262,17 +260,20 @@ def publicSchools():
     total_between_20_and_49_percent = between_20_and_49_percent.shape[0]
     fifty_percent_or_more = df4[(df4['S0284']== 4)]
     total_fifty_percent_or_more = fifty_percent_or_more.shape[0]
-    describe_lunch = eligible_lunch[['S0284']].describe()
+    describe_lunch_no_valid = valid_skip[['S0284']].describe()
+    describe_lunch_with_valid = df4['S0284'].describe()
     print('Question 5: What is the average number of students eligible for the free lunch program?')
-    print(f'There is a valid skip option that was intentionally not calculated for the mean. Total Valid Skip: {total_valid_skip}')
+    print(f'Provided two different summary stats. One without the valid skip, and one that includes valid skip. ')
     print(f'The amount of students that are eligible for free lunch. (Less than 5%): {total_less_than_five_percent}')
     print(f'The amount of students that are eligible for free lunch. (Between 5% and 19%): {total_between_five_and_19_percent} ')
     print(f'The amount of students that are eligible for free lunch. (Between 20% and 49%): {total_between_20_and_49_percent} ')
     print(f'The amount of students that are eligible for free lunch. (50% or more): {total_fifty_percent_or_more}')
-    print(describe_lunch)
-    print
     print()
-
+    print('The summary stats without the valid skip')
+    print(describe_lunch_no_valid)
+    print()
+    print('The summary stats that includes the valid skip option')
+    print(describe_lunch_with_valid)
 summary_dataset()
 publicTeacher()
 publicSchools()
