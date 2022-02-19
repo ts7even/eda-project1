@@ -1,8 +1,6 @@
 import pandas as pd
 import numpy as np 
 
-
-
 # Datasets 
 school_district_data = 'source/dataset/SASS_99_00_S1a_v1_0.csv'
 public_school_principle = 'source/dataset/SASS_99_00_S2a_v1_0.csv'
@@ -84,7 +82,7 @@ def publicTeacher():
     s4a_observation = df6.shape[0]
     print('Working with the Public School Teacher File - Data Processing and Analysis')
     print('Question 1: How many public school teachers in your dataset?')
-    print(f'There are {s4a_observation} public teachers')
+    print(f'There are {s4a_observation} public teachers.')
     print()
 
     # Question 2: How many of them are make teachers versus female teachers?
@@ -94,11 +92,11 @@ def publicTeacher():
     total_female = female_teacher.shape[0]
     describe_sex = df6['T0356'].describe()
     print('Question 2: How many of them are male teachers versus female teachers?')
-    print(f'There are {total_male} male teachers and {total_female} female teachers')
+    print(f'There are {total_male} male teachers and {total_female} female teachers.')
     print(describe_sex)
     print()
 
-    # Question 3: How many of them are white, black, hispanic teachers? 
+    # Question 3: How many teachers are White, Black, Hispanic, Asian, or American Indian? 
     white_teachers = df6[(df6["RACETH_T"]==4)]
     total_white_teachers = white_teachers.shape[0]
     black_teachers = df6[(df6["RACETH_T"]==3)]
@@ -110,12 +108,12 @@ def publicTeacher():
     american_indian_teachers = df6[(df6["RACETH_T"]==1)]
     total_american_indian_teachers = american_indian_teachers.shape[0]
     describe_ethnicity = df6['RACETH_T'].describe()
-    print('Question 3: How many of them are white, black, hispanic teachers?')
-    print(f'There are {total_white_teachers} white teachers')
-    print(f'There are {total_black_teachers} black teachers')
-    print(f'There are {total_hispanic_teachers} hispanic teachers')
-    print(f'There are {total_asian_teachers} asian teachers')
-    print(f'There are {total_american_indian_teachers} american indian teachers')
+    print('Question 3: How teachers are White, Black, Hispanic, Asian, or American Indian?')
+    print(f'There are {total_white_teachers} White teachers.')
+    print(f'There are {total_black_teachers} Black teachers.')
+    print(f'There are {total_hispanic_teachers} Hispanic teachers.')
+    print(f'There are {total_asian_teachers} Asian teachers.')
+    print(f'There are {total_american_indian_teachers} American Indian teachers.')
     print(describe_ethnicity)
     print()
 
@@ -130,14 +128,14 @@ def publicTeacher():
     total_age_4 = data_age_4.shape[0]
     describe_age = df6['AGE_T'].describe()
     print('Question 4: What is the public teachers age distribution?')
-    print(f'There are {total_age_1} teachers that are 30 years or younger old')
-    print(f'There are {total_age_2} teachers that are between 30 to 39 years old')
-    print(f'There are {total_age_3} teachers that are 40 to 49 years old')
-    print(f'There are {total_age_4} teachers that are 50+ years old')
+    print(f'There are {total_age_1} teachers that are 30 years old or younger.')
+    print(f'There are {total_age_2} teachers that are between 30 to 39 years old.')
+    print(f'There are {total_age_3} teachers that are 40 to 49 years old.')
+    print(f'There are {total_age_4} teachers that are 50 years old or older.')
     print(describe_age)
     print()
 
-    # Quesiton 5: How many teachers are teaching elementary school, middle school, and high school?
+    # Question 5: How many teachers are teaching elementary school, middle school, or high school?
     elementary_school = df6[ (df6['TEALEV']== 1)]
     total_elementary = elementary_school.shape[0]
     middle_school = df6[ (df6['TEALEV']== 2)]
@@ -147,16 +145,16 @@ def publicTeacher():
     other_school = df6[ (df6['TEALEV']== 4)]
     total_other = other_school.shape[0]
     describe_school = df6['TEALEV'].describe()
-    print('Quesiton 5: How many teachers are teaching elementary school, middle school, and high school?')
-    print(f'There are {total_elementary} elementary school teachers')
-    print(f'There are {total_middle} middle school teachers')
-    print(f'There are {total_high} high school teachers')
-    print(f'There are {total_other} "other" school teachers')
+    print('Quesiton 5: How many teachers are teaching elementary school, middle school, or high school?')
+    print(f'There are {total_elementary} elementary school teachers.')
+    print(f'There are {total_middle} middle school teachers.')
+    print(f'There are {total_high} high school teachers.')
+    print(f'There are {total_other} "other" school teachers.')
     print(describe_school)
     print()
 
 
-    # Question 6: What are the general fields of main assignment(ASSIGN)?
+    # Question 6: What are the general fields of main assignment (ASSIGN)?
     prek_kinder_genelm = df6[ (df6['ASSIGN']== 1)]
     total_prek = prek_kinder_genelm.shape[0]
     math_science = df6[ (df6['ASSIGN']== 2)]
@@ -176,16 +174,16 @@ def publicTeacher():
     all_others = df6[ (df6['ASSIGN']== 9)]
     total_all_others = all_others.shape[0]
     describe_assign = df6['ASSIGN'].describe()
-    print('Question 6: What are the general fields of main assignment(ASSIGN)?')
-    print(f'There are {total_prek} teachers that teach Prekindergarten, Kindergarten, and General Elementary')
-    print(f'There are {total_math_science} teachers that teach Math and Science')
-    print(f'There are {total_english_language} teachers that teach English/language arts ')
-    print(f'There are {total_social_science} teachers that teach Social Sciences')
-    print(f'There are {total_special_education} teachers that teach Special Education')
-    print(f'There are {total_forieign_language} teachers that teach Foreign Languages')
-    print(f'There are {total_bilingual_ESL} teachers that teach Bilingual/ESL education')
-    print(f'There are {total_vocational_technical} teachers that teach Vocational/technical education')
-    print(f'There are {total_all_others} teachers that teach "All Other" ')
+    print('Question 6: What are the general fields of course study/main assignment (ASSIGN)?')
+    print(f'There are {total_prek} teachers that teach Pre-Kindergarten, Kindergarten, and/or General Elementary.')
+    print(f'There are {total_math_science} teachers that teach mathematics and science.')
+    print(f'There are {total_english_language} teachers that teach English/language arts. ')
+    print(f'There are {total_social_science} teachers that teach social sciences.')
+    print(f'There are {total_special_education} teachers that teach special education.')
+    print(f'There are {total_forieign_language} teachers that teach foreign languages.')
+    print(f'There are {total_bilingual_ESL} teachers that teach bilingual/ESL education.')
+    print(f'There are {total_vocational_technical} teachers that teach vocational/technical education.')
+    print(f'There are {total_all_others} teachers that teach "all other." ')
     print(describe_assign)
     print()
 
@@ -197,10 +195,10 @@ def publicSchools():
     print('Processing the Public School file - DATA Processing and Analyis')
     print()
     print('Question 1: How many schools are there in your data set? ')
-    print(f'There are {total_public_schools} schools in the dataset')
+    print(f'There are {total_public_schools} schools in the dataset.')
     print()
 
-    # Question 2: How many elementary schools are there in the state of Texas, in the state of CA, in the state of Florida?
+    # Question 2: How many elementary schools are there in the state of Texas, in the state of California, and in the state of Florida?
     #         1 = Northeast | 2 = Midwest | 3 = South | 4 = West
     elementary_schools = df4[(df4['SCHLEVEL']==1)]
     texas_elementary_schools = df4[(df4['SCHLEVEL']==1) & (df4['REGION']== 3) ]
@@ -208,14 +206,14 @@ def publicSchools():
     ca_elementary_schools = df4[(df4['SCHLEVEL']==1) & (df4['REGION']== 4) ]
     total_west_elementary_schools = ca_elementary_schools.shape[0]
     describe_elementary_schools = elementary_schools.groupby('REGION')['REGION'].count() # There is another way to describe only elementary schools and by region by using groupby. This just gives the stats of the varibles.
-    print('Question 2: How many elementary schools are there in the state of Texas, in the state of CA, in the state of Florida? ')
-    print(f'Found only data by region in the public school file, so the southern region (Texas & Florida) has {total_south_elementary_schools} elementary schools')
-    print(f'For the Western reigion (California) there are {total_west_elementary_schools} elementary schools')
+    print('Question 2: How many elementary schools are there in the state of Texas, in the state of California, and in the state of Florida? ')
+    print(f'Only found data according to region in the public school file, so the Southern region (Texas & Florida) has {total_south_elementary_schools} elementary schools.')
+    print(f'As for the Western reigion (California) there are {total_west_elementary_schools} elementary schools.')
     print(describe_elementary_schools)
     print()
 
 
-    # Question 3: What is the average enrollment size (# of students) for highschools
+    # Question 3: What is the average enrollment size (number of students) for highschools?
     high_schools = df4[(df4['SCHLEVEL']==2)]
     total_high_schools = high_schools.shape[0]
     enrollment_size_highschool_less300 = df4[(df4['S0092']== 1) & (df4['SCHLEVEL']==2)  ] # Less that 300
@@ -225,17 +223,16 @@ def publicSchools():
     enrollment_size_highschool_500ormore = df4[(df4['S0092']== 3) & (df4['SCHLEVEL']==2) ] # 500 or more
     total_500ormore = enrollment_size_highschool_500ormore.shape[0]
     describe_students = high_schools[['S0092']].describe()   
-    print('Question 3: What is the average enrollment size (# of students) for highschools')
+    print('Question 3: What is the average enrollment size (number of students) for highschools?')
     print(f'The total amount of highschools: {total_high_schools}')
-    print(f'There are {total_less_300} highschools that have less than 300 students; {round((total_less_300/total_high_schools)*100, 2)}%')
-    print(f'There are {total_300to499} highschools that have between 300 - 499 students; Average {round((total_300to499/total_high_schools)*100,2)}%')
-    print(f'There are {total_500ormore} highschools that have 500 or more students; Average {round((total_500ormore/total_high_schools)*100,2)}%')
+    print(f'There are {total_less_300} highschools that have less than 300 students; {round((total_less_300/total_high_schools)*100, 2)}%.')
+    print(f'There are {total_300to499} highschools that have between 300 and 499 students; average {round((total_300to499/total_high_schools)*100,2)}%.')
+    print(f'There are {total_500ormore} highschools that have 500 or more students; average {round((total_500ormore/total_high_schools)*100,2)}%.')
     print(describe_students)
     print()
   
 
     # Question 4: What is the average number of teachers in these public schools? #S0254 = Total Teachers at Schools
-    
     teacher_size_less25 = df4[(df4['S0254']== 1) ]
     total_less25 = teacher_size_less25.shape[0]
     teacher_size_25to34 = df4[(df4['S0254']== 2) ]
@@ -244,13 +241,13 @@ def publicSchools():
     total_35ormore = teacher_size_35ormore.shape[0]
     describe_teachers = df4['S0254'].describe()
     print('Question 4: What is the average number of teachers in these public schools? #S0254 = Total Teachers at Schools')
-    print(f'There are {total_less25} schools with less than 25 teachers')
-    print(f'There are {total_25to34} schools between 25 - 34 teachers ')
-    print(f'There are {total_35ormore} schools with more than 35 teachers')
+    print(f'There are {total_less25} schools with less than 25 teachers.')
+    print(f'There are {total_25to34} schools that have between 25 and 34 teachers. ')
+    print(f'There are {total_35ormore} schools with more than 35 teachers.')
     print(describe_teachers)
     print()
 
-    # Question 5: What is the average number of students eligible for the free lunch program? #S0284 = eligible lunch
+    # Question 5: What is the average number of students eligible for the free/reduced lunch program? #S0284 = eligible lunch
     valid_skip = df4[(df4['S0284']!= -8)]
     less_than_five_percent = df4[(df4['S0284']== 1)]
     total_less_than_five_percent = less_than_five_percent.shape[0]
@@ -262,18 +259,19 @@ def publicSchools():
     total_fifty_percent_or_more = fifty_percent_or_more.shape[0]
     describe_lunch_no_valid = valid_skip[['S0284']].describe()
     describe_lunch_with_valid = df4['S0284'].describe()
-    print('Question 5: What is the average number of students eligible for the free lunch program?')
+    print('Question 5: What is the average number of students eligible for the free/reduced lunch program?')
     print(f'Provided two different summary stats. One without the valid skip, and one that includes valid skip. ')
     print(f'The amount of students that are eligible for free lunch. (Less than 5%): {total_less_than_five_percent}')
     print(f'The amount of students that are eligible for free lunch. (Between 5% and 19%): {total_between_five_and_19_percent} ')
     print(f'The amount of students that are eligible for free lunch. (Between 20% and 49%): {total_between_20_and_49_percent} ')
     print(f'The amount of students that are eligible for free lunch. (50% or more): {total_fifty_percent_or_more}')
     print()
-    print('The summary stats without the valid skip')
+    print('The summary stats without the valid skip.')
     print(describe_lunch_no_valid)
     print()
-    print('The summary stats that includes the valid skip option')
+    print('The summary stats that includes the valid skip option.')
     print(describe_lunch_with_valid)
 summary_dataset()
 publicTeacher()
 publicSchools()
+
